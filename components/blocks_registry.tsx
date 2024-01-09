@@ -14,7 +14,6 @@ const registeredBlocks: Block[] = [
     key: 'navbar',
     defaultInputs: { menus: [] },
     controllers: [
-      { type: 'spacing', name: 'spacing', label: 'Spacing', allowControls: ['padding'] },
       {
         type: 'list',
         name: 'menus',
