@@ -17,15 +17,17 @@ export default function NavBar({ menus, isShowBeta }: PropsT) {
   return (
     <div className="vs-flex vs-sticky vs-bg-white vs-top-0 vs-items-center vs-justify-between vs-m-auto vs-max-w-6xl">
       <div className="vs-flex vs-items-center ">
-        <Image src="/visio.svg" alt="Next Logo" className="dark:vs-hidden" width={100} height={24} priority />
-        <Image
-          src="/visio_light.svg"
-          alt="Next Logo"
-          className="vs-hidden dark:vs-block"
-          width={100}
-          height={24}
-          priority
-        />
+        <Link href="/">
+          <Image src="/visio.svg" alt="Next Logo" className="dark:vs-hidden" width={100} height={24} priority />
+          <Image
+            src="/visio_light.svg"
+            alt="Next Logo"
+            className="vs-hidden dark:vs-block"
+            width={100}
+            height={24}
+            priority
+          />
+        </Link>
         {isShowBeta === 'yes' && <Badge variant={'outline'}>Beta</Badge>}
       </div>
 
