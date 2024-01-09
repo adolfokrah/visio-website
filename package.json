@@ -1,0 +1,47 @@
+{
+  "name": "visio-cms",
+  "version": "15.31.42",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
+    "format": "prettier --write '**/*.ts' '**/*.tsx'",
+    "lint": "next lint && prettier --check '**/*.ts' '**/*.tsx'"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "flowbite-react": "^0.7.2",
+    "jose": "^5.1.1",
+    "lucide-react": "^0.292.0",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-tailwindcss-datepicker": "^1.6.6",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7",
+    "visio-cms": "^0.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18.2.35",
+    "@types/react-dom": "^18.2.14",
+    "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8",
+    "prettier": "^2.8.8",
+    "prettier-plugin-package": "^1.3.1",
+    "tailwindcss": "^3",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
