@@ -15,7 +15,7 @@ type PropsT = {
 export default function NavBar({ menus, isShowBeta }: PropsT) {
   const menuHoverClass = 'hover:vs-text-brand-green-50 vs-duration-100 vs-transition-colors vs-ease-linear';
   return (
-    <div className="vs-fixed vs-w-full vs-py-2 vs-top-0 vs-bg-white vs-z-40">
+    <div className="vs-fixed vs-w-full vs-py-5 vs-top-0 vs-bg-white vs-z-40">
       <div className="vs-flex vs-sticky  vs-top-0 vs-items-center vs-justify-between vs-m-auto vs-max-w-6xl">
         <div className="vs-flex vs-items-center ">
           <Link href="/">

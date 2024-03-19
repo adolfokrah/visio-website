@@ -17,7 +17,7 @@ export default function HeroDemoVideo({ image }: PropsT) {
         className="vs-object-contain vs-w-full vs-h-full "
       />
 
-      <div className="vs-absolute vs-w-full vs-h-full vs-top-0 vs-z-0 vs-grid vs-place-content-center">
+      {/* <div className="vs-absolute vs-w-full vs-h-full vs-top-0 vs-z-0 vs-grid vs-place-content-center">
         <Image
           src="/play-button.svg"
           alt="play button"
@@ -26,7 +26,7 @@ export default function HeroDemoVideo({ image }: PropsT) {
           className="vs-object-contain vs-cursor-pointer"
           priority
         />
-      </div>
+      </div> */}
     </div>
   );
 }

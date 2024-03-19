@@ -78,3 +78,11 @@
     @apply vs-bg-background vs-text-foreground;
   }
 }
+
+.tag {
+  @apply vs-border vs-border-slate-200;
+}
+
+.headline h1 {
+  @apply !vs-text-5xl !vs-font-extrabold;
+}
