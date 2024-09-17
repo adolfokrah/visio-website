@@ -7,6 +7,7 @@ import WebCoreVitals from "./WebCoreVitals";
 import Integrations from "./Integrations";
 import BuildDeploySection from "./BuildDeploySection";
 import ForDevs from "./ForDevs";
+import Testimonials from "./Testimonials";
 const blocks = [
   Hero,
   Navbar,
@@ -15,7 +16,8 @@ const blocks = [
   WebCoreVitals,
   Integrations,
   BuildDeploySection,
-  ForDevs
+  ForDevs,
+  Testimonials
 ] as unknown as BlockList[];
 
 export default blocks;

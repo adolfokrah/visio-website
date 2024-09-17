@@ -17,9 +17,9 @@ interface ForDevsProps {
 }
 const ForDevs:Block<ForDevsProps> = ({caption, image,  title, description, pageBlockId=''}) => {
     return(
-        <div className="bg-black pt-20 px-4 relative mb-[100px]">
+        <div className="bg-black pt-20 px-4 relative ">
             <Container className="space-y-8">
-             <p className="font-satoshi text-primary text-center mb-1">
+             <p className="font-satoshi text-primary text-center mb-1 uppercase text-xs">
                 <Text propName="caption" pageBlockId={pageBlockId} defaultValue={caption}/>
              </p>
              <h2 className="text-4xl font-satoshi max-w-xl mx-auto text-center  text-white text-satoshi mb-4 font-bold">
@@ -37,12 +37,12 @@ const ForDevs:Block<ForDevsProps> = ({caption, image,  title, description, pageB
                     />
                 </h4>
 
-               <div className="right-[550px] sm:right-[350px] md:right-[200px] lg:right-[0px]  lg:mx-auto w-[800px] h-[700px] relative  ">
+               <div className="right-[550px] z-20 sm:right-[350px] md:right-[200px] lg:right-[0px]  lg:mx-auto w-[800px] h-[700px] relative  ">
                 <VisioImage
                         defaultValue={image}
                         propName="image"
                         pageBlockId={pageBlockId}
-                        wrapperClassName="absolute bottom-0 rounded-lg  absolute w-full h-[900px]  top-[20px]"
+                        wrapperClassName="absolute bottom-0 rounded-lg  absolute w-full h-[900px]  top-[5px]"
                         renderImage={(image) => (
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}

@@ -11,6 +11,7 @@ import { cn, getLink, getProjectMode, List, Text } from "visio-cms-lib";
 import { motion } from "framer-motion";
 
 export interface NavbarProps {
+  githubLink: string;
   navLinks: {
     label: string;
     href: string;
@@ -26,6 +27,7 @@ const Navbar: Block<NavbarProps> = ({
   navLinks,
   pageBlockId = "",
   buttons,
+  githubLink,
 }) => {
   const isBuilderMode = getProjectMode() === "BUILDER";
   return (
@@ -76,7 +78,9 @@ const Navbar: Block<NavbarProps> = ({
             </Sheet>
 
             <div className=" items-center gap-4 hidden lg:flex">
+              <Link href={getLink(githubLink)}>
               <GitHubLogoIcon color="white" />
+              </Link>
               <List
                 pageBlockId={pageBlockId}
                 propName="buttons"
@@ -107,8 +111,15 @@ const Navbar: Block<NavbarProps> = ({
 Navbar.Schema = {
   name: "Navbar",
   id: "navbar",
-  sideEditingProps: [],
+  sideEditingProps: [
+    {
+      propName: 'githubLink',
+      label: 'Github Link',
+      type: 'link',
+    }
+  ],
   defaultPropValues: {
+    githubLink: '',
     navLinks: [
       { label: "Features", href: "/#features" },
       { label: "Reviews", href: "/#reviews" },
