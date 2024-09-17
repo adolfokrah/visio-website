@@ -1,0 +1,139 @@
+"use client";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+import Logo from "@/components/ui/logo";
+import { NavLinks } from "@/components/ui/nav-link";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Menu } from "lucide-react";
+import { Block } from "visio-cms-lib/types";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Link from "next/link";
+import { cn, getLink, getProjectMode, List, Text } from "visio-cms-lib";
+import { motion } from "framer-motion";
+
+export interface NavbarProps {
+  navLinks: {
+    label: string;
+    href: string;
+  }[];
+  pageBlockId?: string;
+  buttons: {
+    label: string;
+    href: string;
+  }[];
+}
+
+const Navbar: Block<NavbarProps> = ({ navLinks, pageBlockId = "" }) => {
+  const isBuilderMode = getProjectMode() === "BUILDER";
+  return (
+    <header>
+      <nav
+        className={cn("z-50 absolute left-0 lg:top-5 w-full", {
+          "fixed ": !isBuilderMode,
+        })}
+      >
+        <Container className="relative  mx-auto flex py-3 bg-slate-800/10 lg:rounded-full !px-3 backdrop-blur-sm">
+          <div className="relative z-10 flex justify-between w-full  items-center">
+            <Logo className="w-auto h-4" />
+            <NavLinks navLinks={navLinks} pageBlockId={pageBlockId} />
+
+            <Sheet>
+              <SheetTrigger asChild>
+                <Menu color="white" className="cursor-pointer lg:hidden" />
+              </SheetTrigger>
+              <SheetContent
+                side={"top"}
+                className="bg-dark-800 font-satoshi rounded-none text-white pt-[50px] border-none"
+              >
+                <List
+                  propName="navLinks"
+                  pageBlockId={pageBlockId}
+                  defaultPropValues={navLinks}
+                  className="space-y-4"
+                  renderComponent={({ label, href }, index) => (
+                    <Link
+                      className="font-satoshi text-white"
+                      href={getLink(href)}
+                      key={`${href}.${index}`}
+                    >
+                      <motion.span
+                        initial={{ opacity: 0, y: -100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                      >
+                        <Text
+                          defaultValue={label}
+                          propName={`navLinks.${index}.label`}
+                          pageBlockId={pageBlockId}
+                        />
+                      </motion.span>
+                    </Link>
+                  )}
+                />
+              </SheetContent>
+            </Sheet>
+
+            <div className=" items-center gap-4 hidden lg:flex">
+              <GitHubLogoIcon color="white" />
+              <Button className="font-satoshi text-white rounded-full">
+                {" "}
+                Get started
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </nav>
+    </header>
+  );
+};
+
+Navbar.Schema = {
+  name: "Navbar",
+  id: "navbar",
+  sideEditingProps: [],
+  defaultPropValues: {
+    navLinks: [
+      { label: "Features", href: "/#features" },
+      { label: "Reviews", href: "/#reviews" },
+      { label: "Pricing", href: "/#pricing" },
+      { label: "FAQs", href: "/#faqs" },
+    ],
+    buttons: [],
+  },
+  lists: [
+    {
+      propName: "navLinks",
+      label: "Nav Link",
+      defaultValue: {
+        label: "New Link",
+        href: "/new-page",
+      },
+      sideEditingProps: [
+        {
+          propName: "href",
+          type: "link",
+          label: "Link",
+        },
+      ],
+    },
+    {
+      propName: "buttons",
+      label: "Button",
+      defaultValue: {
+        label: "New Button",
+        href: "/new-page",
+        variant: "solid",
+        className: "hidden lg:block",
+      },
+      sideEditingProps: [
+        {
+          propName: "href",
+          type: "link",
+          label: "Link",
+        },
+      ],
+    },
+  ],
+  group: "Navigation",
+};
+
+export default Navbar;
