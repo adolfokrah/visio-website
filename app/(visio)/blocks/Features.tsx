@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 type FeatureProps = {
   title: string;
-    subtitle: string;
+  subtitle: string;
   features: {
     background: MediaFile;
     title: string;
@@ -17,22 +17,28 @@ type FeatureProps = {
   pageBlockId?: string;
 };
 
-const Features: Block<FeatureProps> = ({ features, pageBlockId = "", title, subtitle }) => {
+const Features: Block<FeatureProps> = ({
+  features,
+  pageBlockId = "",
+  title,
+  subtitle,
+}) => {
   return (
     <div className="bg-dark-900 w-full py-11">
       <Container>
         <h2 className="font-satoshi text-4xl max-w-lg mx-auto text-white text-center mb-2">
-            <Text
-                propName="title"
-                pageBlockId={pageBlockId}
-                defaultValue={title}
-            />
+          <Text
+            propName="title"
+            pageBlockId={pageBlockId}
+            defaultValue={title}
+          />
         </h2>
-        <h4  className="font-satoshi text-lg max-w-xl mx-auto text-slate-400 text-center mb-10">
-            <Text
-                propName="subtitle"
-                pageBlockId={pageBlockId}
-                defaultValue={subtitle}/>
+        <h4 className="font-satoshi text-lg max-w-xl mx-auto text-slate-400 text-center mb-10">
+          <Text
+            propName="subtitle"
+            pageBlockId={pageBlockId}
+            defaultValue={subtitle}
+          />
         </h4>
         <List
           defaultPropValues={features}
@@ -50,7 +56,6 @@ const Features: Block<FeatureProps> = ({ features, pageBlockId = "", title, subt
                 "md:col-span-6 lg:col-span-6": index < 2,
                 "md:col-span-6 lg:col-span-4": index == 2,
                 "lg:col-span-4": index > 1 && index < features.length,
-                
               },
             );
           }}
@@ -112,7 +117,8 @@ Features.Schema = {
   sideEditingProps: [],
   defaultPropValues: {
     title: "Effortlessly manage your website content.",
-    subtitle: "Effortlessly manage and update your website with a powerful drag-and-drop editor, fully customizable components, and real-time content control.",
+    subtitle:
+      "Effortlessly manage and update your website with a powerful drag-and-drop editor, fully customizable components, and real-time content control.",
     features: [
       {
         background: {
