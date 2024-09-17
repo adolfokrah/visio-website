@@ -1,7 +1,7 @@
 import blocks from "@/app/(visio)/blocks";
 
 const config = {
-  blocks:[...blocks],
+  blocks: [...blocks],
   allowImageTransformation: false,
   supportedLanguages: [
     {
@@ -22,6 +22,6 @@ const config = {
   supabaseProjectUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || "",
   supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANONKEY || "",
   unsplashAccessKey: process.env.NEXT_PUBLIC_UNSPLASH_ACCESSKEY || "",
-}
+};
 
 export default config;

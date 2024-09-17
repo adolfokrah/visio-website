@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Block, MediaFile } from "visio-cms-lib/types";
 import Text from "visio-cms-lib/Text";
 import BlurIn from "@/components/magicui/blur-in";
@@ -6,19 +6,19 @@ import GridPattern from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
 import ProductVideo from "@/components/ui/product-video";
 import Image from "next/image";
-import VisioImage from 'visio-cms-lib/Image'
+import VisioImage from "visio-cms-lib/Image";
 import QuickStartCode from "@/components/ui/quick-start-code";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 import { ProjectTypes } from "@/components/ui/project-types";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 interface HeroProps {
   title: string;
-  subtitle:string;
+  subtitle: string;
   quickStartCode: string;
   productVideoImageMobile: MediaFile;
   productVideoUrl: string;
@@ -26,16 +26,24 @@ interface HeroProps {
   usedTools: MediaFile;
 }
 
-const Hero: Block<HeroProps> = ({title, subtitle, pageBlockId="", quickStartCode, productVideoImageMobile, productVideoUrl, usedTools}) => {
+const Hero: Block<HeroProps> = ({
+  title,
+  subtitle,
+  pageBlockId = "",
+  quickStartCode,
+  productVideoImageMobile,
+  productVideoUrl,
+  usedTools,
+}) => {
   return (
     <div
-      className=" py-20 md:py-40 
+      className=" pt-20 pb-5 md:pt-40 
      bg-gradient-to-b from-dark-900 via-[#121F1E] to-dark-900
     "
     >
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden px-3">
         <div className="max-w-4xl lmx-auto">
-        <BlurIn
+          <BlurIn
             word={title}
             className="z-10 text-center text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-satoshi text-transparent leading-[3rem] lg:leading-[5rem] bg-clip-text bg-gradient-to-br from-white via-white to-primary"
           />
@@ -43,44 +51,53 @@ const Hero: Block<HeroProps> = ({title, subtitle, pageBlockId="", quickStartCode
             <motion.p
               initial={{ opacity: 0, y: 3 }}
               whileInView={{ opacity: 1, y: 0 }}
-            className="text-slate-300 font-satoshi text-center relative">
-               <Text propName="subtitle" pageBlockId={pageBlockId} defaultValue={subtitle}/>
+              className="text-slate-300 font-satoshi text-center relative"
+            >
+              <Text
+                propName="subtitle"
+                pageBlockId={pageBlockId}
+                defaultValue={subtitle}
+              />
             </motion.p>
           </div>
 
-          <QuickStartCode className="mx-auto mt-6" code={quickStartCode} pageBlockId={pageBlockId}/>
-
+          <QuickStartCode
+            className="mx-auto mt-6"
+            code={quickStartCode}
+            pageBlockId={pageBlockId}
+          />
 
           <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-             <div className="w-[200px] mx-auto">
-             <VisioImage
-              pageBlockId={pageBlockId}
-              propName="usedTools"
-              defaultValue={usedTools}
-              wrapperClassName="m-auto w-max "
-              renderImage={(image) => (
-               <>
-                {!image?.imagePublicUrl ? null : <Image
-                  className="mx-auto my-6"
-                  src={image.imagePublicUrl}
-                  width={200}
-                  height={80}
-                  alt="Used Tools"
-                  unoptimized
-                />}</>
-              )}
-             />
-             </div>
-          </TooltipTrigger>
-          <TooltipContent className="bg-white text-black font-satoshi">
-            <p>Tools used</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-
-          
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="w-[200px] mx-auto">
+                  <VisioImage
+                    pageBlockId={pageBlockId}
+                    propName="usedTools"
+                    defaultValue={usedTools}
+                    wrapperClassName="m-auto w-max "
+                    renderImage={(image) => (
+                      <>
+                        {!image?.imagePublicUrl ? null : (
+                          <Image
+                            className="mx-auto my-6"
+                            src={image.imagePublicUrl}
+                            width={200}
+                            height={80}
+                            alt="Used Tools"
+                            unoptimized
+                          />
+                        )}
+                      </>
+                    )}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="bg-white text-black font-satoshi">
+                <p>Tools used</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </div>
 
@@ -97,7 +114,7 @@ const Hero: Block<HeroProps> = ({title, subtitle, pageBlockId="", quickStartCode
 
       <ProductVideo image={productVideoImageMobile} video={productVideoUrl} />
 
-      <ProjectTypes/>
+      <ProjectTypes />
     </div>
   );
 };
@@ -106,10 +123,11 @@ Hero.Schema = {
   name: "Hero",
   id: "hero",
   defaultPropValues: {
-    title: "Build Dynamic Web Pages Effortlessly with a Drag-and-Drop Visual CMS",
+    title:
+      "Build Dynamic Web Pages Effortlessly with a Drag-and-Drop Visual CMS",
     subtitle: ` An open-source visual CMS that lets you drag, drop, and edit React
               components.—designed for developers, built for content creators.`,
-    quickStartCode: 'create-visio-app@latest',
+    quickStartCode: "create-visio-app@latest",
     productVideoImageMobile: {
       mediaHash: undefined,
       altText: "Product video image mobile",
@@ -122,7 +140,8 @@ Hero.Schema = {
       width: 0,
       height: 0,
     },
-    productVideoUrl: "https://rruekjolwsyfvgvbcvjv.supabase.co/storage/v1/object/public/media/video.mp4?t=2024-09-17T09%3A17%3A22.441Z",
+    productVideoUrl:
+      "https://rruekjolwsyfvgvbcvjv.supabase.co/storage/v1/object/public/media/video.mp4?t=2024-09-17T09%3A17%3A22.441Z",
   },
   sideEditingProps: [
     {

@@ -22,7 +22,11 @@ export interface NavbarProps {
   }[];
 }
 
-const Navbar: Block<NavbarProps> = ({ navLinks, pageBlockId = "" , buttons}) => {
+const Navbar: Block<NavbarProps> = ({
+  navLinks,
+  pageBlockId = "",
+  buttons,
+}) => {
   const isBuilderMode = getProjectMode() === "BUILDER";
   return (
     <header>
@@ -78,10 +82,7 @@ const Navbar: Block<NavbarProps> = ({ navLinks, pageBlockId = "" , buttons}) => 
                 propName="buttons"
                 className="flex flex-col gap-4"
                 defaultPropValues={buttons || []}
-                renderComponent={(
-                  { label, href },
-                  index,
-                ) => (
+                renderComponent={({ label, href }, index) => (
                   <Link
                     className="font-satoshi text-white rounded-full bg-primary px-4 py-2 inline-block text-sm"
                     key={label}
