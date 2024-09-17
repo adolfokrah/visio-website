@@ -2,9 +2,10 @@ import React from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
-import ProductImage from '@/components/ui/pic.svg'
+import { getImageUrl } from "visio-cms-lib";
+import { MediaFile } from "visio-cms-lib/types";
 
-export default function ProductVideo() {
+export default function ProductVideo({video, image}:{video: string, image: MediaFile}) {
   const { scrollY } = useScroll();
   const [rotateX, setRotatex] = React.useState(28);
   const [scale, setScale] = React.useState(0.8);
@@ -25,7 +26,7 @@ export default function ProductVideo() {
       }}
     >
         <div className="relative w-full h-full rounded-lg overflow-hidden">
-        <video  className="w-full h-full object-cover rounded-lg" loop autoPlay muted  src="./videos/video.mp4"></video>
+        <video  className="w-full h-full object-cover rounded-lg" loop autoPlay muted  src={video}></video>
         </div>
       <BorderBeam
         size={250}
@@ -40,7 +41,7 @@ export default function ProductVideo() {
 
     <div className="relative w-full h-full rounded-lg overflow-hidden">
         <Image
-            src={ProductImage}
+            src={getImageUrl(image)}
             fill
             alt="Product Image"
         />
