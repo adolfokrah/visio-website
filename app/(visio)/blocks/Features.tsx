@@ -41,7 +41,7 @@ const Features: Block<FeatureProps> = ({ features, pageBlockId = "", title, subt
           className="grid grid-cols-12 font-satoshi gap-2"
           setListItemClassName={(feature, index) => {
             return cn(
-              "col-span-12 sm:col-span-12 md:col-span-6 rounded-lg relative border border-dark-700 group col-span-4  p-1 h-[400px] relative  ",
+              "col-span-12 sm:col-span-12 md:col-span-6 rounded-lg relative border border-dark-700 group  p-1 h-[400px] relative  ",
               {
                 "lg:rounded-tl-[50px]": index < 1,
                 "lg:rounded-tr-[50px]": index == 1,
