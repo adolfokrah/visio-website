@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import Image from "next/image";
 import { cn, getImageUrl, List, Text } from "visio-cms-lib";
 import { Block, MediaFile } from "visio-cms-lib/types";
+import { motion } from "framer-motion";
 
 type FeatureProps = {
   title: string;
@@ -54,7 +55,9 @@ const Features: Block<FeatureProps> = ({ features, pageBlockId = "", title, subt
             );
           }}
           renderComponent={(feature, index) => (
-            <div
+            <motion.div
+              initial={{ scale: 0.8 }}
+              whileInView={{ scale: 1 }}
               className={cn(
                 "relative h-full w-full rounded-md overflow-hidden p-3 ",
                 {
@@ -95,7 +98,7 @@ const Features: Block<FeatureProps> = ({ features, pageBlockId = "", title, subt
                   />
                 </p>
               </div>
-            </div>
+            </motion.div>
           )}
         />
       </Container>
