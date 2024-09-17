@@ -5,6 +5,15 @@ import Features from "./Features";
 import CodeToEditor from "./CodeToEditor";
 import WebCoreVitals from "./WebCoreVitals";
 import Integrations from "./Integrations";
-const blocks = [Hero, Navbar, Features, CodeToEditor, WebCoreVitals, Integrations] as unknown as BlockList[];
+import BuildDeploySection from "./BuildDeploySection";
+const blocks = [
+  Hero,
+  Navbar,
+  Features,
+  CodeToEditor,
+  WebCoreVitals,
+  Integrations,
+  BuildDeploySection,
+] as unknown as BlockList[];
 
 export default blocks;

@@ -66,7 +66,10 @@ export default async function Page({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: `${scripts?.body ?? ""}` }}
       />
       <PageContent
-        projectConfiguration={{ ...projectConfiguration, theme: projectConfiguration?.theme || {colorScheme: []} }}
+        projectConfiguration={{
+          ...projectConfiguration,
+          theme: projectConfiguration?.theme || { colorScheme: [] },
+        }}
         pageBlocks={data.pageBlocks}
         params={data.params}
         pages={data.pages}
