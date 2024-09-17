@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import Logo from "@/components/ui/logo";
 import { NavLinks } from "@/components/ui/nav-link";
@@ -23,7 +22,7 @@ export interface NavbarProps {
   }[];
 }
 
-const Navbar: Block<NavbarProps> = ({ navLinks, pageBlockId = "" }) => {
+const Navbar: Block<NavbarProps> = ({ navLinks, pageBlockId = "" , buttons}) => {
   const isBuilderMode = getProjectMode() === "BUILDER";
   return (
     <header>
@@ -74,10 +73,28 @@ const Navbar: Block<NavbarProps> = ({ navLinks, pageBlockId = "" }) => {
 
             <div className=" items-center gap-4 hidden lg:flex">
               <GitHubLogoIcon color="white" />
-              <Button className="font-satoshi text-white rounded-full">
-                {" "}
-                Get started
-              </Button>
+              <List
+                pageBlockId={pageBlockId}
+                propName="buttons"
+                className="flex flex-col gap-4"
+                defaultPropValues={buttons || []}
+                renderComponent={(
+                  { label, href },
+                  index,
+                ) => (
+                  <Link
+                    className="font-satoshi text-white rounded-full bg-primary px-4 py-2 inline-block text-sm"
+                    key={label}
+                    href={getLink(href)}
+                  >
+                    <Text
+                      defaultValue={label}
+                      propName={`buttons.${index}.label`}
+                      pageBlockId={pageBlockId}
+                    />
+                  </Link>
+                )}
+              />
             </div>
           </div>
         </Container>
