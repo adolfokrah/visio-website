@@ -6,6 +6,7 @@ import CodeToEditor from "./CodeToEditor";
 import WebCoreVitals from "./WebCoreVitals";
 import Integrations from "./Integrations";
 import BuildDeploySection from "./BuildDeploySection";
+import ForDevs from "./ForDevs";
 const blocks = [
   Hero,
   Navbar,
@@ -14,6 +15,7 @@ const blocks = [
   WebCoreVitals,
   Integrations,
   BuildDeploySection,
+  ForDevs
 ] as unknown as BlockList[];
 
 export default blocks;

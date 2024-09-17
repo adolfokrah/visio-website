@@ -24,7 +24,7 @@ const WebCoreVitals: Block<WebCoreVitalsProps> = ({
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        className="max-w-3xl rounded-lg border border-dark-700 p-14 mx-auto"
+        className="max-w-3xl rounded-lg border border-dark-700 p-8 md:p-14 mx-auto"
         style={{ backgroundColor: getColor(backgroundColor) }}
       >
         <h2 className="text-4xl font-satoshi mx-auto text-center pl-4 text-white text-satoshi mb-4 font-bold">
