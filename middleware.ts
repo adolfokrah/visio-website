@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import visioConfig from "@/visio.config";
+import { locales } from "./lib/contants";
+
 // This function can be marked `async` if using `await` inside
-export function middleware(request: NextRequest) {
-  const locals = visioConfig.supportedLanguages.map((lang) => lang.locale);
+export async function middleware(request: NextRequest) {
+  const locals = locales.supportedLanguages.map((lang) => lang.locale);
 
   const { pathname } = request.nextUrl;
   if (pathname != "/" && !pathname.startsWith("/cms")) {
@@ -11,7 +12,7 @@ export function middleware(request: NextRequest) {
     if (!locals.includes(localeFromPath)) {
       return NextResponse.redirect(
         new URL(
-          `/${visioConfig.defaultLanguage.locale}${pathname}`,
+          `/${locales.defaultLanguage.locale}${pathname}`,
           request.nextUrl,
         ).toString(),
       );
