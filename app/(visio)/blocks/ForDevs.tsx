@@ -37,7 +37,7 @@ const ForDevs:Block<ForDevsProps> = ({caption, image,  title, description, pageB
                     />
                 </h4>
 
-               <div className="right-[550px] sm:right-[300px] md:right-[200px] lg:right-[0px]  lg:mx-auto w-[800px] h-[700px] relative  ">
+               <div className="right-[550px] sm:right-[350px] md:right-[200px] lg:right-[0px]  lg:mx-auto w-[800px] h-[700px] relative  ">
                 <VisioImage
                         defaultValue={image}
                         propName="image"
