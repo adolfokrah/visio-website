@@ -1,5 +1,5 @@
 import { Block } from "visio-cms-lib/types";
-import Text from "visio-cms-lib/Text";
+// import Text from "visio-cms-lib/Text";
 import BlurIn from "@/components/magicui/blur-in";
 import GridPattern from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
@@ -20,7 +20,7 @@ interface HeroProps {
   pageBlockId?: string;
 }
 
-const Hero: Block<HeroProps> = ({ title, pageBlockId = "" }) => {
+const Hero: Block<HeroProps> = () => {
   return (
     <div
       className=" py-40 

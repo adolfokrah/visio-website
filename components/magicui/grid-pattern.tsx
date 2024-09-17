@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useId } from "react";
 
 import { cn } from "@/lib/utils";
 
 interface GridPatternProps {
-  width?: any;
-  height?: any;
-  x?: any;
-  y?: any;
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
   squares?: Array<[x: number, y: number]>;
   strokeDasharray?: any;
   className?: string;
