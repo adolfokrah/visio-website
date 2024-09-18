@@ -70,7 +70,7 @@ Footer.Schema = {
         },
         sideEditingProps: [
             {
-                propName: 'link',
+                propName: 'href',
                 type: 'link',
                 label: 'Link'
             }
