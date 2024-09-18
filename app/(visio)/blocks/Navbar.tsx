@@ -79,7 +79,7 @@ const Navbar: Block<NavbarProps> = ({
 
             <div className=" items-center gap-4 hidden lg:flex">
               <Link href={getLink(githubLink)}>
-              <GitHubLogoIcon color="white" />
+                <GitHubLogoIcon color="white" />
               </Link>
               <List
                 pageBlockId={pageBlockId}
@@ -113,13 +113,13 @@ Navbar.Schema = {
   id: "navbar",
   sideEditingProps: [
     {
-      propName: 'githubLink',
-      label: 'Github Link',
-      type: 'link',
-    }
+      propName: "githubLink",
+      label: "Github Link",
+      type: "link",
+    },
   ],
   defaultPropValues: {
-    githubLink: '',
+    githubLink: "",
     navLinks: [
       { label: "Features", href: "/#features" },
       { label: "Reviews", href: "/#reviews" },

@@ -8,6 +8,8 @@ import Integrations from "./Integrations";
 import BuildDeploySection from "./BuildDeploySection";
 import ForDevs from "./ForDevs";
 import Testimonials from "./Testimonials";
+import ShowCase from "./ShowCase";
+import FAQ from "./Faq";
 const blocks = [
   Hero,
   Navbar,
@@ -17,7 +19,9 @@ const blocks = [
   Integrations,
   BuildDeploySection,
   ForDevs,
-  Testimonials
+  Testimonials,
+  ShowCase,
+  FAQ,
 ] as unknown as BlockList[];
 
 export default blocks;
