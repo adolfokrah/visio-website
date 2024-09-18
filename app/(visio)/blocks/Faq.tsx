@@ -25,7 +25,7 @@ const FAQ: Block<FAQProps> = ({
 }) => {
   const [expandedFAQ, setExpandedFAQ] = useState<string[]>([]);
   return (
-    <div className="bg-dark-900 pt-48 pb-20 px-4 relative ">
+    <div className="bg-dark-900 pb-20 px-4 relative ">
       <Container className="max-w-xl">
         <h2 className="text-4xl font-satoshi max-w-xl mx-auto text-center  text-white text-satoshi mb-4 font-bold">
           <Text
@@ -140,7 +140,7 @@ FAQ.Schema = {
         itemKey: "1f3c763f-b6c3-47ad-8250-d404d761f95b",
         title: "Do I need coding knowledge to use Visio CMS?",
         answer:
-          "No coding knowledge is required to use the CMS. The drag-and-drop interface and prop editor allow content creators and marketers to manage and update web content without technical expertise.",
+          "Coding knowledge is only required for developers. The drag-and-drop interface and prop editor allow content creators and marketers to manage and update web content without technical expertise.",
       },
       {
         itemKey: "9b65d1e1-9b38-463a-937e-5013f60c0ff8",
