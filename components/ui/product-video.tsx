@@ -50,9 +50,12 @@ export default function ProductVideo({
       </motion.div>
 
       <div className="relative border border-dark-700 bg-dark-900 p-1 rounded-lg mx-auto ml-10 w-[1200px] h-[595px]  lg:hidden">
-        <div className="relative w-full h-full rounded-lg overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+        className="relative w-full h-full rounded-lg overflow-hidden">
           <Image src={getImageUrl(image)} fill alt="Product Image" />
-        </div>
+        </motion.div>
         <BorderBeam
           size={250}
           duration={12}

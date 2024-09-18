@@ -6,11 +6,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import List from "visio-cms-lib/List";
 import Text from "visio-cms-lib/Text";
 import { getLink } from "visio-cms-lib/utils";
+import { cn } from "@/lib/utils";
 
 export function NavLinks({
   navLinks,
   pageBlockId,
+  className,
 }: {
+  className?: string;
   navLinks: {
     label: string;
     href: string;
@@ -24,7 +27,7 @@ export function NavLinks({
     <List
       pageBlockId={pageBlockId}
       defaultPropValues={navLinks}
-      className="hidden lg:flex lg:gap-10 w-max"
+      className={cn('hidden lg:flex lg:gap-10 w-max', className)}
       propName="navLinks"
       renderComponent={({ label, href }, index) => {
         return (

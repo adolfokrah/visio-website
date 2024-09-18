@@ -24,7 +24,7 @@ const GetStartedCta: Block<GetStartedProps> = ({
   cta,
 }) => {
   return (
-    <div className="bg-dark-900 py-20 px-4 relative ">
+    <div className="bg-dark-900 pb-20 px-4 relative ">
       <Container className="bg-black border border-800 mx-2 lg:mx-auto rounded-xl !p-20 relative overflow-hidden">
         <h2 className="text-4xl font-satoshi max-w-[300px] text-white text-satoshi mb-4 font-bold">
           <Text
