@@ -10,6 +10,8 @@ import ForDevs from "./ForDevs";
 import Testimonials from "./Testimonials";
 import ShowCase from "./ShowCase";
 import FAQ from "./Faq";
+import GetStartedCta from "./getStartedCTA";
+import Footer from "./Footer";
 const blocks = [
   Hero,
   Navbar,
@@ -22,6 +24,8 @@ const blocks = [
   Testimonials,
   ShowCase,
   FAQ,
+  GetStartedCta,
+  Footer
 ] as unknown as BlockList[];
 
 export default blocks;

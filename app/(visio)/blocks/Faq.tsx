@@ -65,7 +65,7 @@ const FAQ: Block<FAQProps> = ({
               }
             >
               <div className="flex items-center gap-4">
-                <div className="w-[30px] h-[30px] bg-primary rounded-full grid place-items-center">
+                <div className="w-[30px] flex-shrink-0 flex-grow-0 h-[30px] bg-primary rounded-full grid place-items-center">
                   {expandedFAQ.includes(faq.itemKey) ?  <Minus size={14} color="white" /> : <Plus size={14} color="white" />}
                 </div>
                 <div className="text-white  font-satoshi  text-md">
@@ -78,8 +78,8 @@ const FAQ: Block<FAQProps> = ({
               </div>
               {expandedFAQ.includes(faq.itemKey) && (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ scale: 0.9 }}
+                  animate={{  scale: 1 }}
                   className="text-slate-300  font-satoshi text-xs"
                   onClick={(e) => e.stopPropagation()}
                 >
