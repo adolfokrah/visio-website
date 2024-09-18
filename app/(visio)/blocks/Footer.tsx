@@ -67,7 +67,14 @@ Footer.Schema = {
         defaultValue: {
             label: "Features",
             href: "/#features"
-        }
+        },
+        sideEditingProps: [
+            {
+                propName: 'link',
+                type: 'link',
+                label: 'Link'
+            }
+        ]
     }
   ]
 };
