@@ -8,7 +8,8 @@ import { Block } from "visio-cms-lib/types";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { cn, getLink, getProjectMode, List, Text } from "visio-cms-lib";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 
 export interface NavbarProps {
   githubLink: string;
@@ -30,6 +31,17 @@ const Navbar: Block<NavbarProps> = ({
   githubLink,
 }) => {
   const isBuilderMode = getProjectMode() === "BUILDER";
+
+  const { scrollY } = useScroll();
+  const [alpha, setAlpha] = useState(0)
+
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const alphaValue =  latest / 4000;
+    console.log(alphaValue);
+    setAlpha(alphaValue > 0.4 ? 0.4 : alphaValue)
+  });
+
   return (
     <header>
       <nav
@@ -37,7 +49,7 @@ const Navbar: Block<NavbarProps> = ({
           "fixed ": !isBuilderMode,
         })}
       >
-        <Container className="relative  mx-auto flex py-3 bg-slate-800/10 lg:rounded-full !px-3 backdrop-blur-sm">
+        <Container className="relative  mx-auto flex py-3 lg:rounded-full !px-3 backdrop-blur-sm" style={{backgroundColor: `rgb(39 39 39 / ${alpha})`}}>
           <div className="relative z-10 flex justify-between w-full  items-center">
             <Logo className="w-auto h-4" />
             <NavLinks navLinks={navLinks} pageBlockId={pageBlockId} />

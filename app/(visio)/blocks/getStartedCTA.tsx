@@ -25,7 +25,7 @@ const GetStartedCta: Block<GetStartedProps> = ({
 }) => {
   return (
     <div className="bg-dark-900 pb-20 px-4 relative ">
-      <Container className="bg-black border border-800 mx-2 lg:mx-auto rounded-xl !p-20 relative overflow-hidden">
+      <Container className="bg-black border border-800 mx-2 lg:mx-auto rounded-xl p-7 lg:!p-20 relative overflow-hidden">
         <h2 className="text-4xl font-satoshi max-w-[300px] text-white text-satoshi mb-4 font-bold">
           <Text
             propName="title"
@@ -41,14 +41,15 @@ const GetStartedCta: Block<GetStartedProps> = ({
           />
         </h4>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-center gap-4">
         <QuickStartCode
             code={cta.code}
             pageBlockId={pageBlockId}
+            className="text-xs md:text-sm w-full md:w-max justify-between"
         />
 
         <Link href={cta.link}
-            className="inline-block bg-primary text-white font-satoshi px-6 py-3 rounded-md text-sm"
+            className="inline-block bg-primary w-full text-center md:text-left md:w-max text-white font-satoshi px-6 py-3 rounded-md text-sm"
         >
         <Text
             propName="cta.text"
