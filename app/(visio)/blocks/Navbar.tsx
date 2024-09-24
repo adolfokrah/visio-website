@@ -38,7 +38,6 @@ const Navbar: Block<NavbarProps> = ({
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const alphaValue =  latest / 4000;
-    console.log(alphaValue);
     setAlpha(alphaValue > 0.4 ? 0.4 : alphaValue)
   });
 

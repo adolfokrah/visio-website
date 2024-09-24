@@ -23,7 +23,7 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "visio-cms-lib": "^0.1.204"
+    "visio-cms-lib": "^0.1.205"
   },
   "devDependencies": {
     "@types/node": "^20",
