@@ -25,6 +25,7 @@ const Features: Block<FeatureProps> = ({
 }) => {
   return (
     <div className="bg-dark-900 w-full py-11">
+      <a href="#features" id="features"/>
       <Container>
         <h2 className="font-satoshi text-4xl max-w-lg mx-auto text-white text-center mb-2">
           <Text

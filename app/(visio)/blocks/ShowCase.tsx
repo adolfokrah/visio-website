@@ -24,6 +24,7 @@ const ShowCase: Block<TestimonialsProps> = ({
 }) => {
   return (
     <div className="bg-dark-900 pb-20 px-4 relative ">
+      <a href="#showcase" id="showcase"/>
       <Container>
         <h2 className="text-4xl font-satoshi max-w-xl mx-auto text-center  text-white text-satoshi mb-4 font-bold">
           <Text
