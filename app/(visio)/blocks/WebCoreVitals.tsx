@@ -20,7 +20,7 @@ const WebCoreVitals: Block<WebCoreVitalsProps> = ({
   backgroundColor,
 }) => {
   return (
-    <div className="bg-dark-900 pb-20  px-4">
+    <div className="bg-dark-900 pb-20  px-4 relative">
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -45,7 +45,8 @@ const WebCoreVitals: Block<WebCoreVitalsProps> = ({
           defaultValue={image}
           propName="image"
           pageBlockId={pageBlockId}
-          wrapperClassName="w-full rounded-lg overflow-hidden relative"
+          wrapperClassName="w-full rounded-lg overflow-hidden relative min-h-[100px] bg-transparent"
+          fallbackImage="https://rruekjolwsyfvgvbcvjv.supabase.co/storage/v1/object/public/media/visio-cms-media-d61acb1f-129f-4296-be11-8aacd6095778.png?t=1727337642834"
           renderImage={(image) => (
             <Image
               src={image.imagePublicUrl}
