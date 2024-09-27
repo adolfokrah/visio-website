@@ -62,7 +62,7 @@ const Hero: Block<HeroProps> = ({
           </div>
 
           <QuickStartCode
-            className="mx-auto mt-6"
+            className="mx-auto mt-6 mb-3"
             code={quickStartCode}
             pageBlockId={pageBlockId}
           />
