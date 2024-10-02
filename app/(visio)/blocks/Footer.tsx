@@ -11,6 +11,7 @@ export interface FooterProps {
   navLinks: {
     label: string;
     href: string;
+    itemKey: string;
   }[];
   pageBlockId?: string;
 }
@@ -53,10 +54,10 @@ Footer.Schema = {
   defaultPropValues: {
     githubLink: "",
     navLinks: [
-      { label: "Features", href: "/#features" },
-      { label: "Reviews", href: "/#reviews" },
-      { label: "Pricing", href: "/#pricing" },
-      { label: "FAQs", href: "/#faqs" },
+      { label: "Features", href: "/#features", itemKey: 'features' },
+      { label: "Reviews", href: "/#reviews", itemKey: 'reviews'},
+      { label: "Pricing", href: "/#pricing", itemKey: 'pricing' },
+      { label: "FAQs", href: "/#faqs", itemKey: 'faqs' },
     ],
   },
   group: "Navigation",

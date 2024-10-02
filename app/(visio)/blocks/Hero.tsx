@@ -160,6 +160,18 @@ Hero.Schema = {
       type: "text",
     },
   ],
+  lists:[
+    {
+      propName: 'usedTools',
+      label: 'Used Tool',
+      defaultValue: {
+        mediaHash: undefined,
+        altText: 'Used tools',
+        width: 0,
+        height: 0,
+      },
+    }
+  ]
 };
 
 export default Hero;
