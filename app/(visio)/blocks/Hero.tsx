@@ -75,7 +75,7 @@ const Hero: Block<HeroProps> = ({
                     pageBlockId={pageBlockId}
                     propName="usedTools"
                     defaultValue={usedTools}
-                    wrapperClassName="m-auto w-max "
+                    wrapperClassName="m-auto w-max min-h-[40px] min-w-[40px]"
                     renderImage={(image) => (
                       <>
                         {!image?.imagePublicUrl ? null : (
@@ -159,18 +159,6 @@ Hero.Schema = {
       label: "Video URL",
       type: "text",
     },
-  ],
-  lists:[
-    {
-      propName: 'usedTools',
-      label: 'Used Tool',
-      defaultValue: {
-        mediaHash: undefined,
-        altText: 'Used tools',
-        width: 0,
-        height: 0,
-      },
-    }
   ]
 };
 
