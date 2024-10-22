@@ -6,6 +6,7 @@ import NotFound from "@/app/not-found";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "@/app/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 type PageProps = {
   params: { slug: string[]; locale: string };
@@ -20,7 +21,7 @@ export async function generateMetadata({
     `/${slug.join("/")}`,
     process.env.NEXT_PUBLIC_SUPABASE_ANONKEY || "",
     process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-    locale,
+    locale
   );
 
   const pageMetaData = data?.seo || {};
@@ -43,7 +44,7 @@ export default async function Page({ params }: PageProps) {
     `/${slug.join("/")}`,
     process.env.NEXT_PUBLIC_SUPABASE_ANONKEY || "",
     process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-    locale,
+    locale
   );
 
   if (data.error) {
@@ -74,6 +75,7 @@ export default async function Page({ params }: PageProps) {
         params={data.params}
         pages={data.pages}
       />
+      <Analytics />
     </>
   );
 }
