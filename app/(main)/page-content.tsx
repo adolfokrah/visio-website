@@ -1,5 +1,5 @@
-"use client";
 
+"use client"
 import LivePage from "visio-cms-lib/LivePage";
 import blocks from "@/app/(visio)/blocks";
 import { PageData } from "visio-cms-lib/types";

@@ -11,6 +11,14 @@ import { cn, getLink, getProjectMode, List, Text } from "visio-cms-lib";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 
+
+type Post = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
 export interface NavbarProps {
   githubLink: string;
   navLinks: {
@@ -24,6 +32,7 @@ export interface NavbarProps {
     href: string;
     itemKey: string;
   }[];
+  posts: Post[];
 }
 
 const Navbar: Block<NavbarProps> = ({
@@ -31,6 +40,7 @@ const Navbar: Block<NavbarProps> = ({
   pageBlockId = "",
   buttons,
   githubLink,
+  posts = []
 }) => {
   const isBuilderMode = getProjectMode() === "BUILDER";
 
@@ -140,6 +150,7 @@ Navbar.Schema = {
       { label: "FAQs", href: "/#faqs", itemKey: 'faqs' },
     ],
     buttons: [],
+    posts: []
   },
   lists: [
     {

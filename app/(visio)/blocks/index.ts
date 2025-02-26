@@ -12,6 +12,8 @@ import ShowCase from "./ShowCase";
 import FAQ from "./Faq";
 import GetStartedCta from "./getStartedCTA";
 import Footer from "./Footer";
+import Posts from "./PostsList";
+import Post from "./PostDetails";
 const blocks = [
   Hero,
   Navbar,
@@ -25,7 +27,9 @@ const blocks = [
   ShowCase,
   FAQ,
   GetStartedCta,
-  Footer
+  Footer,
+  Posts,
+  Post
 ] as unknown as BlockList[];
 
 export default blocks;

@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "@/app/globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import config from "@/visio.config";
 
 type PageProps = {
   params: { slug: string[]; locale: string };
@@ -42,9 +43,8 @@ export default async function Page({ params }: PageProps) {
   const { slug, locale } = params;
   const data = await getPageBlocks(
     `/${slug.join("/")}`,
-    process.env.NEXT_PUBLIC_SUPABASE_ANONKEY || "",
-    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-    locale
+    locale,
+    config
   );
 
   if (data.error) {
@@ -54,6 +54,8 @@ export default async function Page({ params }: PageProps) {
   if (!data) return null;
 
   const { scripts, ...projectConfiguration } = data.projectConfiguration;
+
+  //handler to fetch server side data
 
   return (
     <>
