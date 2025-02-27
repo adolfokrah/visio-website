@@ -19,7 +19,7 @@ const config = {
         case path.match(/^\/posts\/\d+$/)?.input:
             const res1 = await fetch(`https://jsonplaceholder.typicode.com${path}`);
             const data1 = await res1.json();
-            const d =  {...data1, relatedPosts: await getPosts()};
+            const d =  {...data1, posts: await getPosts()};
             return d;
         default:
           return null

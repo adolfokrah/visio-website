@@ -40,7 +40,6 @@ const Navbar: Block<NavbarProps> = ({
   pageBlockId = "",
   buttons,
   githubLink,
-  posts = []
 }) => {
   const isBuilderMode = getProjectMode() === "BUILDER";
 
