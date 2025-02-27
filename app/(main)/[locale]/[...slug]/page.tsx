@@ -1,5 +1,5 @@
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
+// export const dynamic = "force-dynamic";
+// export const fetchCache = "force-no-store";
 import { getPageBlocks, getPageMetaData } from "visio-cms-lib/utils";
 import PageContent from "../../page-content";
 import NotFound from "@/app/not-found";
