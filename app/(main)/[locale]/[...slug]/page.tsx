@@ -55,7 +55,6 @@ export default async function Page({ params }: PageProps) {
 
   const { scripts, ...projectConfiguration } = data.projectConfiguration;
 
-  //handler to fetch server side data
 
   return (
     <>
