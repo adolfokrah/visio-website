@@ -26,7 +26,7 @@ const Post: Block<PostPorps> = ({externalData, content, pageBlockId=''}) => {
             <h1>{externalData?.title || 'n/a'}</h1>
             <br/>
 
-            {externalData?.relatedPosts && <Slot propName="content" defaultValue={content} pageBlockId={pageBlockId} externalData={{posts: [...externalData.relatedPosts]}} allowedBlockIds={['posts']}/>}
+            <Slot propName="content" defaultValue={content} pageBlockId={pageBlockId} />
         </div>
     )
 }

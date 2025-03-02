@@ -10,6 +10,7 @@ import Link from "next/link";
 import { cn, getLink, getProjectMode, List, Text } from "visio-cms-lib";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge"
 
 
 type Post = {
@@ -61,7 +62,12 @@ const Navbar: Block<NavbarProps> = ({
       >
         <Container className="relative  mx-auto flex py-3 lg:rounded-full !px-3 backdrop-blur-sm" style={{backgroundColor: `rgb(39 39 39 / ${alpha})`}}>
           <div className="relative z-10 flex justify-between w-full  items-center">
-            <Logo className="w-auto h-4" />
+            <div className="flex items-center gap-4">
+              <Link href="/">
+                <Logo />
+              </Link>
+              <Badge >Beta</Badge>
+            </div>
             <NavLinks navLinks={navLinks} pageBlockId={pageBlockId} />
 
             <Sheet>
